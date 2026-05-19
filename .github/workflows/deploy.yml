@@ -28,10 +28,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # Caching configuration is completely removed here to ignore missing lockfiles
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Compile and Export Static Build
         run: npm run build
